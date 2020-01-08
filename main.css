@@ -1,0 +1,27 @@
+.total-content {
+  margin: 0 auto;
+  width:1300px;
+  border-radius: 3px;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+}
+.statistical-module {
+  border-radius: 5px;
+  width: 300px;
+  height: 100px;
+}
+.total-task{
+background-color: #31b48d;
+}
+.unsolved-task{
+  background-color:#38a1f2;
+}
+.processing-task{
+  background-color:#7538c7;
+}
+.solved-task{
+  background-color:#3b67a4;
+}
