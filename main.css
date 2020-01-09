@@ -1,20 +1,38 @@
 body {
   font-family: serif, "Microsoft YaHei";
 }
+@font-face {
+  font-family: "iconfont";
+  src: url("./iconfont/iconfont.eot");
+  src: url("./iconfont/iconfont.eot?#iefix") format("embedded-opentype"),
+    url("./iconfont/iconfont.woff2") format("woff2"),
+    url("./iconfont/iconfont.woff") format("woff"),
+    url("./iconfont/iconfont.ttf") format("truetype"),
+    url("./iconfont/iconfont.svg#iconfont") format("svg");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  opacity: 0.3;
+  font-size: 100px;
+  font-style: normal;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .total-content {
-  margin: 0 auto;
-  width: 1300px;
+  margin: 20px auto 0 auto;
+  width: 1500px;
   border-radius: 3px;
 }
-.head {
+.header {
   display: flex;
   justify-content: space-between;
   height: 120px;
 }
 .statistical-module {
   border-radius: 5px;
-  width: 300px;
-  height: 100px;
+  width: 360px;
+  height: 120px;
 }
 .total-task {
   position: relative;
@@ -33,30 +51,46 @@ body {
   background-color: #3b67a4;
 }
 .module-title {
-  top:18px;
-  left:15px;
+  top: 15px;
+  left: 15px;
   position: absolute;
   color: white;
   font-size: 14px;
 }
-.module-number{
-  top:50px;
-  left:15px;
+.module-number {
+  top: 70px;
+  left: 15px;
   position: absolute;
-  color:white;
+  color: white;
   font-size: 32px;
   font-weight: 500;
   line-height: 30px;
 }
-.module-isOnline{
-  top:18px;
-  right:15px;
+.module-isOnline {
+  top: 15px;
+  right: 15px;
   position: absolute;
-  width:40px;
-  height:20px;
+  width: 35px;
+  height: 22px;
   border-radius: 3px;
-  background: rgba(255,255,255,0.3);
-  color:white;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 14px;
   text-align: center;
-
+}
+.module-percentage {
+  top: 70px;
+  right: 15px;
+  position: absolute;
+  color: white;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.module-icon {
+  top: 10px;
+  right: 60px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
 }
