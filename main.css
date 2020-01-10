@@ -128,24 +128,34 @@ table th {
 .title-operate {
   width: 300px;
 }
-.list-content{
+.list-content {
   padding-left: 10px;
   padding-right: 10px;
 }
-.delete-icon{
+.delete-icon {
   height: 35px;
   width: 70px;
   background-color: #ee706d;
   border-radius: 5px;
   text-align: center;
-  color:white;
+  color: white;
 }
-.ell-row{
+.ell-row {
   text-align: center;
 }
-.ellipsis-block{
-  width:80px;
-  height:40px;
+.ellipsis-block {
+  width: 80px;
+  height: 40px;
   border: 0;
   font-size: 24px;
+}
+
+.active-color {
+  color: #666666;
+}
+.pending-color {
+  color: #ee706d;
+}
+.closed-color {
+  color: #f7da47;
 }

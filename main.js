@@ -1,5 +1,4 @@
 let tbody = document.getElementsByTagName("tbody")[0];
-let ellipsisBlock = document.getElementsByClassName("ellipsis-block")[0];
 let data;
 
 function loadtTasks() {
@@ -28,12 +27,26 @@ function loadProjects(oneProject) {
   addInner += '<td class="list-content">' + oneProject.name + '</td>';
   addInner += '<td class="list-content">' + oneProject.description + '</td>';
   addInner += '<td class="list-content">' + oneProject.endTime + '</td>';
-  addInner += '<td class="list-content">' + oneProject.status + '</td>';
+  let coloredState = addStateColor(oneProject);
+  addInner += coloredState;
   addInner += '<td class="list-content"><div class="delete-icon">删除</div></td>';
   addTableRow.innerHTML = addInner;
   tbody.appendChild(addTableRow);
 }
 
+function addStateColor(oneProject) {
+  let status = oneProject.status;
+  switch (status) {
+    case "ACTIVE":
+      return '<td class="list-content active-color">' + oneProject.status + '</td>';
+    case "PENDING":
+      return '<td class="list-content pending-color">' + oneProject.status + '</td>';
+    case "CLOSED":
+      return '<td class="list-content closed-color">' + oneProject.status + '</td>';
+    default:
+      break;
+  }
+}
 function totalLoad() {
   let ellRow = document.getElementsByClassName("ell-row")[0];
   tbody.removeChild(ellRow.parentElement);
