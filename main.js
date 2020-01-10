@@ -121,7 +121,7 @@ function createConfirmPage(deleteRowIndex) {
         <p class ="confirm-text">确认删除该项目吗?</p>
       </div>
       <div class="confirm-two-button">
-        <input type="button" class="admit-icon" value="确认" onclick="deleteRow(${deleteRowIndex})"/>
+        <input type="button" class="admit-icon" value="确认" onclick="deleteRow(`+deleteRowIndex+`)"/>
         <input type="button" class="cancel-icon" value="取消" onclick="closeConfirm()"/>
       </div>
     </div>`

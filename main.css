@@ -186,19 +186,20 @@ table th {
 }
 .icon-close {
   position: relative;
-  font-size: 20px;
+  top: 20px;
+  font-size: 16px;
   color: #666;
-  padding: 5px 0 0 10px;
 }
 .confirm-content {
   display: inline-block;
   position: relative;
-  padding-left: 54px;
+  padding-left: 30px;
 }
 .confirm-icon {
   position: relative;
-  top: 6px;
-  font-size: 40px;
+  bottom: 20px;
+  left: 20px;
+  font-size: 50px;
   color: #f1c826;
 }
 .confirm-title {
