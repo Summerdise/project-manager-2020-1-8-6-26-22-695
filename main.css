@@ -2,13 +2,13 @@ body {
   font-family: serif, "Microsoft YaHei";
 }
 @font-face {
-  font-family: 'iconfont';
-  src: url('./iconfont/iconfont.eot');
-  src: url('./iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
-      url('./iconfont/iconfont.woff2') format('woff2'),
-      url('./iconfont/iconfont.woff') format('woff'),
-      url('./iconfont/iconfont.ttf') format('truetype'),
-      url('./iconfont/iconfont.svg#iconfont') format('svg');
+  font-family: "iconfont";
+  src: url("./iconfont/iconfont.eot");
+  src: url("./iconfont/iconfont.eot?#iefix") format("embedded-opentype"),
+    url("./iconfont/iconfont.woff2") format("woff2"),
+    url("./iconfont/iconfont.woff") format("woff"),
+    url("./iconfont/iconfont.ttf") format("truetype"),
+    url("./iconfont/iconfont.svg#iconfont") format("svg");
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -51,65 +51,83 @@ body {
   background-color: #3b67a4;
 }
 .module-title {
-  top:15px;
-  left:15px;
+  top: 15px;
+  left: 15px;
   position: absolute;
   color: white;
   font-size: 14px;
 }
-.module-number{
-  top:70px;
-  left:15px;
+.module-number {
+  top: 70px;
+  left: 15px;
   position: absolute;
-  color:white;
+  color: white;
   font-size: 32px;
   font-weight: 500;
   line-height: 30px;
 }
-.module-isOnline{
-  top:15px;
-  right:15px;
+.module-isOnline {
+  top: 15px;
+  right: 15px;
   position: absolute;
-  width:35px;
-  height:22px;
+  width: 35px;
+  height: 22px;
   border-radius: 3px;
-  background: rgba(255,255,255,0.3);
-  color:white;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
   font-size: 14px;
   text-align: center;
 }
-.module-percentage{
-  top:70px;
-  right:15px;
+.module-percentage {
+  top: 70px;
+  right: 15px;
   position: absolute;
-  color:white;
+  color: white;
   font-size: 32px;
   font-weight: 500;
   line-height: 30px;
 }
-.module-icon{
-  top:10px;
-  right:60px;
+.module-icon {
+  top: 10px;
+  right: 60px;
   position: absolute;
-  width:50px;
-  height:50px;
+  width: 50px;
+  height: 50px;
 }
-table{
-  width:1500px;
+table {
+  width: 1500px;
   border-collapse: collapse;
 }
-thead{
-  height:60px;
-  width:1500px;
-  border-bottom: 1px solid #DCDEE3;
-  color:#333;
-  background: #EBECF0;
+table thead {
+  width: 1500px;
+  border-bottom: 1px solid #dcdee3;
+  color: #333;
+  background: #ebecf0;
   text-align: left;
 }
-tr{
+table tr {
+  height: 60px;
   border: 0;
 }
-th{
+table th {
   padding-left: 10px;
   border: 0;
+}
+tbody {
+  padding-left: 10px;
+}
+.title-name {
+  width: 300px;
+}
+.title-description {
+  width: 800px;
+}
+.title-end-time {
+  width: 300px;
+}
+.title-state {
+  width: 300px;
+}
+.title-operate {
+  width: 300px;
 }
