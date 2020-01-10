@@ -1,4 +1,5 @@
 let tbody = document.getElementsByTagName("tbody")[0];
+let ellipsisBlock = document.getElementsByClassName("ellipsis-block")[0];
 let data;
 
 function loadtTasks() {
@@ -9,27 +10,19 @@ function loadtTasks() {
     if (this.readyState === 4) {
       let res = JSON.parse(xhr.responseText);
       data = res.projects;
-      console.log(data);
-      listLoad();
+      firstLoad();
     }
   }
 }
-function listLoad() {
+function firstLoad() {
   for (var i = 0; i < 2; i++) {
-    console.log(i);
-    console.log(data[0]);
-    loadProjects(data[0]);
+    loadProjects(data[i]);
   }
   let ellipsisRow = document.createElement("tr");
-  ellipsisRow.innerHTML = '<td class="ell-row" colspan="5">。。。</td>'
+  ellipsisRow.innerHTML = '<td class="ell-row" colspan="5"><span class="ellipsis-block" onmouseover="totalLoad()">。。。</span></td>'
   tbody.appendChild(ellipsisRow);
 }
 function loadProjects(oneProject) {
-  // let projectName = oneProject.name;
-  // let projectDescription = oneProject.description;
-  // let projectEndTime = oneProject.endTime;
-  // let projectState = oneProject.status;
-
   let addTableRow = document.createElement("tr");
   let addInner = "";
   addInner += '<td class="list-content">' + oneProject.name + '</td>';
@@ -41,5 +34,13 @@ function loadProjects(oneProject) {
   tbody.appendChild(addTableRow);
 }
 
+function totalLoad() {
+  let ellRow = document.getElementsByClassName("ell-row")[0];
+  tbody.removeChild(ellRow.parentElement);
+  for (let i = 2; i < data.length; i++) {
+    loadProjects(data[i]);
+  }
+}
+
+
 loadtTasks();
-// listLoad();

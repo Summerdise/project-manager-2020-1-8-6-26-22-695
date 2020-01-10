@@ -106,7 +106,7 @@ table thead {
   text-align: left;
 }
 table tr {
-  height: 60px;
+  height: 80px;
   border: 0;
 }
 table th {
@@ -142,5 +142,10 @@ table th {
 }
 .ell-row{
   text-align: center;
+}
+.ellipsis-block{
+  width:80px;
+  height:40px;
+  border: 0;
   font-size: 24px;
 }
