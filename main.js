@@ -35,7 +35,7 @@ function loadProjects(oneProject) {
   addInner += '<td class="list-content">' + oneProject.endTime + '</td>';
   let coloredState = addStateColor(oneProject);
   addInner += coloredState;
-  addInner += '<td class="list-content"><div class="delete-icon">删除</div></td>';
+  addInner += '<td class="list-content"><button class="delete-icon">删除</button></td>';
   addTableRow.innerHTML = addInner;
   tbody.appendChild(addTableRow);
 }
@@ -63,6 +63,11 @@ function totalLoad() {
   }
   updateDataNum();
 }
+function calculateNum(){
+  activeNum = document.getElementsByClassName("active-color").length;
+  pendingNum=document.getElementsByClassName("pending-color").length;
+  closedNum=document.getElementsByClassName("closed-color").length;
+}
 function updateNum() {
   let totalNum = activeNum + pendingNum + closedNum;
   moduleNumber[0].innerHTML = totalNum;
@@ -73,13 +78,14 @@ function updateNum() {
 function updatePercentage() {
   let totalNum = activeNum + pendingNum + closedNum;
   let activePer = percentage(activeNum, totalNum);
-  let pendingPer = percentage(activeNum, totalNum);
-  let closedPer = 100 - activePer - pendingPer;
+  let pendingPer = percentage(pendingNum, totalNum);
+  let closedPer = (100 - activePer - pendingPer);
   modulePercentage[0].innerHTML = activePer + '%';
   modulePercentage[1].innerHTML = pendingPer + '%';
   modulePercentage[2].innerHTML = closedPer + '%';
 }
 function updateDataNum() {
+  calculateNum();
   updateNum();
   updatePercentage();
 }
@@ -87,7 +93,21 @@ function percentage(num, total) {
   if (num == 0 || total == 0) {
     return 0;
   }
-  return (Math.round(num / total * 10000) / 100.00);
+  return percent = Math.floor(num/total*100);
 }
-
+let deleteIcon=document.getElementsByClassName("delete-icon")[0];
+function supervise(){
+  tbody.addEventListener("click",function(event){
+    let target = event.target;
+    let deleteRowIndex = target.parentElement.parentElement;
+    if("delete-icon"===target.className){
+      tbody.removeChild(deleteRowIndex);
+      updateDataNum();
+    }
+  })
+}
+// function deleteProject(this) {
+//   alert(this);
+// }
 loadtTasks();
+supervise();

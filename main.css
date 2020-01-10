@@ -136,6 +136,7 @@ table th {
   height: 35px;
   width: 70px;
   background-color: #ee706d;
+  border:0;
   border-radius: 5px;
   text-align: center;
   color: white;
