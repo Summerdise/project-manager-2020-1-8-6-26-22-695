@@ -63,10 +63,10 @@ function totalLoad() {
   }
   updateDataNum();
 }
-function calculateNum(){
+function calculateNum() {
   activeNum = document.getElementsByClassName("active-color").length;
-  pendingNum=document.getElementsByClassName("pending-color").length;
-  closedNum=document.getElementsByClassName("closed-color").length;
+  pendingNum = document.getElementsByClassName("pending-color").length;
+  closedNum = document.getElementsByClassName("closed-color").length;
 }
 function updateNum() {
   let totalNum = activeNum + pendingNum + closedNum;
@@ -93,24 +93,24 @@ function percentage(num, total) {
   if (num == 0 || total == 0) {
     return 0;
   }
-  return percent = Math.floor(num/total*100);
+  return percent = Math.floor(num / total * 100);
 }
-let deleteIcon=document.getElementsByClassName("delete-icon")[0];
+let deleteIcon = document.getElementsByClassName("delete-icon")[0];
 let confirmPage = document.getElementsByClassName("confirm-total-page")[0];
-function supervise(){
-  tbody.addEventListener("click",function(event){
+function supervise() {
+  tbody.addEventListener("click", function (event) {
     let target = event.target;
     let deleteRowIndex = target.parentElement.parentElement;
-    if("delete-icon"===target.className){
+    if ("delete-icon" === target.className) {
       createConfirmPage(deleteRowIndex);
     }
   })
 }
-function deleteRow(deleteRowIndex){
+function deleteRow(deleteRowIndex) {
   tbody.removeChild(deleteRowIndex);
   updateDataNum();
 }
-function createConfirmPage(deleteRowIndex){
+function createConfirmPage(deleteRowIndex) {
   confirmPage.style.display = 'block';
   confirmPage.innerHTML = `
     <div class="confirm-dialog">

@@ -136,7 +136,7 @@ table th {
   height: 35px;
   width: 70px;
   background-color: #ee706d;
-  border:0;
+  border: 0;
   border-radius: 5px;
   text-align: center;
   color: white;
@@ -167,9 +167,9 @@ table th {
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.3) ;
+  background: rgba(0, 0, 0, 0.3);
 }
-.confirm-dialog{
+.confirm-dialog {
   position: absolute;
   width: 400px;
   height: 200px;
@@ -179,16 +179,16 @@ table th {
   background-color: #fff;
 }
 .confirm-dialog-head {
-  height:30px;
-  padding-left:370px;
+  height: 30px;
+  padding-left: 370px;
   position: relative;
   border: none;
 }
-.icon-close{
+.icon-close {
   position: relative;
-  font-size:20px;
+  font-size: 20px;
   color: #666;
-  padding: 5px 0 0 10px; 
+  padding: 5px 0 0 10px;
 }
 .confirm-content {
   display: inline-block;
@@ -199,11 +199,11 @@ table th {
   position: relative;
   top: 6px;
   font-size: 40px;
-  color: #F1C826;
+  color: #f1c826;
 }
 .confirm-title {
   display: inline-block;
-  padding-left:5px;
+  padding-left: 5px;
   line-height: 24px;
   font-size: 20px;
   color: #333;
@@ -213,21 +213,21 @@ table th {
   margin-top: 8px;
   font-size: 14px;
 }
-.confirm-two-button{
+.confirm-two-button {
   position: relative;
   margin: 18px 0;
   padding-left: 210px;
 }
-.admit-icon{
-  height:30px;
-  width:60px;
-  background-color: #3080FE;
-  border:1px solid #dcdee3;
+.admit-icon {
+  height: 30px;
+  width: 60px;
+  background-color: #3080fe;
+  border: 1px solid #dcdee3;
   border-radius: 3px;
 }
-.cancel-icon{
-  height:30px;
-  width:60px;
+.cancel-icon {
+  height: 30px;
+  width: 60px;
   border-radius: 3px;
-  border:1px solid #dcdee3;
+  border: 1px solid #dcdee3;
 }
