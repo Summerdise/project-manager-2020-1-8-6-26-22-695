@@ -21,7 +21,7 @@ function listLoad() {
     loadProjects(data[0]);
   }
   let ellipsisRow = document.createElement("tr");
-  ellipsisRow.innerHTML = '<td class="ell-row">...</td>'
+  ellipsisRow.innerHTML = '<td class="ell-row" colspan="5">。。。</td>'
   tbody.appendChild(ellipsisRow);
 }
 function loadProjects(oneProject) {
