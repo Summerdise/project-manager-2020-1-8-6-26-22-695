@@ -97,18 +97,20 @@ function percentage(num, total) {
 }
 let deleteIcon = document.getElementsByClassName("delete-icon")[0];
 let confirmPage = document.getElementsByClassName("confirm-total-page")[0];
+let deleteRowIndex;
 function supervise() {
   tbody.addEventListener("click", function (event) {
     let target = event.target;
-    let deleteRowIndex = target.parentElement.parentElement;
+    deleteRowIndex = target.parentElement.parentElement;
     if ("delete-icon" === target.className) {
-      createConfirmPage(deleteRowIndex);
+      createConfirmPage();
     }
   })
 }
-function deleteRow(deleteRowIndex) {
+function deleteRow() {
   tbody.removeChild(deleteRowIndex);
   updateDataNum();
+  closeConfirm();
 }
 function createConfirmPage(deleteRowIndex) {
   confirmPage.style.display = 'block';
@@ -121,7 +123,7 @@ function createConfirmPage(deleteRowIndex) {
         <p class ="confirm-text">确认删除该项目吗?</p>
       </div>
       <div class="confirm-two-button">
-        <input type="button" class="admit-icon" value="确认" onclick="deleteRow(`+deleteRowIndex+`)"/>
+        <input type="button" class="admit-icon" value="确认" onclick="deleteRow()"/>
         <input type="button" class="cancel-icon" value="取消" onclick="closeConfirm()"/>
       </div>
     </div>`
