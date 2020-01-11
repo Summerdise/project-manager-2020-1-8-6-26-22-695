@@ -35,7 +35,7 @@ function loadProjects(oneProject) {
   addInner += '<td class="list-content">' + oneProject.endTime + '</td>';
   let coloredState = addStateColor(oneProject);
   addInner += coloredState;
-  addInner += '<td class="list-content"><button class="delete-icon">删除</button></td>';
+  addInner += '<td class="list-content"><button class="delete-icon" id="' + oneProject.id + '">删除</button></td>';
   addTableRow.innerHTML = addInner;
   tbody.appendChild(addTableRow);
 }
@@ -98,10 +98,14 @@ function percentage(num, total) {
 let deleteIcon = document.getElementsByClassName("delete-icon")[0];
 let confirmPage = document.getElementsByClassName("confirm-total-page")[0];
 let deleteRowIndex;
+let deleteIdIndex;
 function supervise() {
   tbody.addEventListener("click", function (event) {
     let target = event.target;
     deleteRowIndex = target.parentElement.parentElement;
+    deleteIdIndex = target.id - 1;
+    console.log(target);
+    console.log(target.id);
     if ("delete-icon" === target.className) {
       createConfirmPage();
     }
@@ -111,6 +115,7 @@ function deleteRow() {
   tbody.removeChild(deleteRowIndex);
   updateDataNum();
   closeConfirm();
+  supervise();
 }
 function createConfirmPage(deleteRowIndex) {
   confirmPage.style.display = 'block';
