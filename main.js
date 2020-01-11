@@ -5,18 +5,30 @@ let closedNum = 0;
 let data;
 let moduleNumber = document.getElementsByClassName("module-number");
 let modulePercentage = document.getElementsByClassName("module-percentage");
+let API_ROOT = "http://localhost:3000/projects";
 
 function loadtTasks() {
-  let xhr = new XMLHttpRequest();
-  xhr.open("get", "./db.json", true);
-  xhr.send();
-  xhr.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      let res = JSON.parse(xhr.responseText);
-      data = res.projects;
-      firstLoad();
-    }
-  }
+  // let xhr = new XMLHttpRequest();
+  // xhr.open("get", "http://localhost:3000/projects", true);
+  // xhr.send();
+  // xhr.onreadystatechange = function () {
+  //   if (this.readyState === 4||this.status===200) {
+  //     let res = JSON.parse(xhr.responseText);
+  //     data = res.projects;
+  //     firstLoad();
+  //   }
+  // }
+  ajax({
+    url: API_ROOT,
+    method: "GET",
+    success: function (responseText) { getJsonData(responseText) },
+    fail: function (stutas) { console.log("ERROR") }
+  })
+}
+function getJsonData(responseText) {
+  console.log(responseText);
+  data = responseText;
+  firstLoad();
 }
 function firstLoad() {
   for (var i = 0; i < 2; i++) {
